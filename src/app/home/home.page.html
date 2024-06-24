@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>ClamaPaz</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <ion-item style="padding-top: 20px;">
+  <ion-toolbar>
+    <ion-title class="center-title">
+      ¡Comencemos!
+    </ion-title>
+  </ion-toolbar>
+  </ion-item>
+  
+
+  <form (ngSubmit)="submitForm()">
+    <div class="example-container">
+      <ion-input class="ion1" label="Nombre" label-placement="floating" fill="solid" placeholder="Ingrese" [(ngModel)]="nombre" name="nombre"></ion-input>
+      <br>
+    </div>
+    <div class="example-container">
+      <ion-input class="ion1" label="Apellido" label-placement="floating" fill="solid" placeholder="Ingrese"></ion-input>
+      <br>
+    </div>
+    <ion-button type="submit" class="botONE" [routerLink]="['/analisis']">Ingrese</ion-button>
+  </form>
+</ion-content>
+  
+
+

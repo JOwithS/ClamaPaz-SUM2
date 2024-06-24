@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-item style="padding-top: 20px;">
+    <br><br><br><br><br><br>
+  <ion-toolbar>
+    <ion-title class="Lcenter-title">
+      ClamaPaz
+    </ion-title>
+    <p class="pcenter">Eres el dueño de tu mente</p>
+    <br><img src="assets/img/cuida.jpg" alt="Descripción de la imagen" class="imgcuida" />
+
+  </ion-toolbar>
+  </ion-item>
+
+
+
+  <ion-content [fullscreen]="true">
+    <ion-item class="zoom-animation">
+  
+        <ion-toolbar>
+          <ion-title class="L2center-title">
+            Bienvenido!
+          </ion-title>
+        </ion-toolbar>
+    </ion-item>
+      <br><br><br>
+      <form (ngSubmit)="submitForm()">
+        <label for="username">Username:</label>
+        <ion-input type="text" id="username" class="centrolab"[(ngModel)]="username" name="username" required></ion-input>
+        <br>
+        <label for="password">Password:</label>
+        <ion-input type="password" id="password" class="centrolab" [(ngModel)]="password" name="password" required></ion-input>
+        <br>
+        <section>
+          <div class="example-button-row">
+            <ion-button (click)="login()">Login</ion-button>
+          <ion-button (click)="register()">Register</ion-button>
+          </div>
+          
+        </section>
+      </form>
+      
+      

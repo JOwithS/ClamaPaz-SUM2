@@ -1,0 +1,47 @@
+.center-title{
+    text-align: center;
+    font-size: 30px;
+    color: black;
+  }
+
+.example-container mat-form-field + mat-form-field {
+    margin-left: 8px;
+  }
+
+  ion-toolbar ion-button {
+    width: 100%;
+    margin: 0;
+  }
+
+.large-button mat-form-field + mat-form-field{
+    margin-left: 8px;
+
+
+    
+  }
+  
+.example-container mat-form-field + mat-form-field {
+    margin-left: 8px;
+  }
+.color{
+  background-color: #403F3F;
+  color: #898888; 
+  border: 2px solid black;
+  border-radius: 10px; 
+  font-family: Helvetica;
+
+}
+
+.color1{
+  background-color: #403F3F;
+  color: #898888; 
+  border: 2px solid black;
+  font-family: Helvetica;
+  border-radius: 10px; 
+}
+
+.botONE{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

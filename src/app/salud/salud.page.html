@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Salud Mental</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngIf="mostrarMensajeSalud">
+    <ion-item style="padding-top: 20px;">
+      <ion-card>
+        <ion-card-header>
+          <strong><h2> Explicación sobre el Cuidado de la Salud Mental</h2></strong>
+        </ion-card-header>
+        <ion-card-content>
+          La salud mental se refiere a un estado de bienestar emocional, psicológico y social que afecta cómo pensamos, sentimos y actuamos. También influye en cómo manejamos el estrés, nos relacionamos con los demás y tomamos decisiones. La salud mental es importante en todas las etapas de la vida, desde la niñez y la adolescencia hasta la adultez.
+          <br><br><strong><h2>Aspectos clave de la salud mental:</h2></strong><br><br>
+          <strong> Bienestar emocional:</strong>
+          <br><br>
+          Incluye la capacidad de manejar emociones y comportamientos, sentirse bien consigo mismo y tener relaciones saludables con los demás.
+          <br><br>
+          <strong>Función psicológica: </strong>
+          <br><br>
+          Se relaciona con procesos mentales como el pensamiento, la percepción, la memoria y el aprendizaje. Una buena salud psicológica ayuda a enfrentar desafíos y adaptarse a los cambios.
+          <br><br><br><br>
+          <strong><h2>Factores que influyen en la salud mental:</h2></strong><br><br>
+          <strong>Salud social:</strong>
+          <br><br>
+          Implica mantener relaciones satisfactorias y tener un sentido de pertenencia a una comunidad o grupo social. La conexión social es vital para la salud mental.
+          <br><br>
+          <strong>Biológicos:</strong><br><br>
+          La genética misma.
+          <br><br>
+          <strong>Psicológicos:</strong>
+          <br><br>
+          Se relacionan con el manejo del estrés, la resiliencia y el desarrollo emocional.
+          <br><br>
+          <strong>Sociales:</strong>
+          <br><br>
+          Comprenden las relaciones familiares, las amistades, las experiencias laborales y otros aspectos del entorno social.
+          <br><br><br><br>
+          <strong><h2>Importancia de cuidar la salud mental:</h2></strong><br><br>
+          <strong> Prevención de trastornos mentales:</strong>
+          <br><br>
+          Una buena salud mental ayuda a prevenir problemas como la depresión, la ansiedad y otros trastornos.
+          <br><br>
+          <strong> Mejora de la calidad de vida:</strong>
+          <br><br>
+          Contribuye a una mayor satisfacción y felicidad en la vida diaria.
+          <br><br>
+          <strong>Desempeño funcional: </strong>
+          <br><br>
+          Afecta la capacidad de trabajar, estudiar y realizar actividades cotidianas de manera eficaz.
+          <br><br><br><br>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </div>
+  <ion-button  class="botONE" [routerLink]="['/analisis']">Volver atrás</ion-button>
+</ion-content>

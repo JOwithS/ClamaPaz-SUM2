@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Trastornos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+
+<div *ngIf="mostrartranstorno">
+  <ion-item style="padding-top: 20px; ">
+    <ion-card style="background-color: #F9E6DA ;">
+      <ion-card-header>
+        Información sobre Trastornos de Salud Mental
+      </ion-card-header>
+      <ion-card-content>
+        <br><br>
+        <b>Depresión:</b>
+        <br><br>
+        La depresión es un trastorno del estado de ánimo que causa una sensación persistente de tristeza y pérdida de interés en las actividades cotidianas. Puede afectar la forma en que una persona piensa, siente y maneja las actividades diarias. Los síntomas pueden variar desde sentimientos de desesperanza y falta de energía hasta dificultad para concentrarse y cambios en el apetito y el sueño. Es importante buscar ayuda profesional si alguien experimenta síntomas de depresión, ya que el tratamiento adecuado puede ayudar a manejar los síntomas y mejorar la calidad de vida.
+        <br><br><br><br>
+        <b>Ansiedad:</b>
+        <br><br>
+        La ansiedad es una respuesta natural del cuerpo frente a situaciones estresantes o peligrosas. Sin embargo, cuando la ansiedad se vuelve excesiva, persistente e interfiere con la vida diaria, puede ser un trastorno de ansiedad. Este trastorno se caracteriza por preocupaciones excesivas, miedo intenso y síntomas físicos como nerviosismo, tensión muscular y dificultad para concentrarse. La ansiedad puede afectar el bienestar emocional y físico de una persona, pero con tratamiento adecuado, que puede incluir terapia y/o medicamentos, muchas personas pueden aprender a manejarla y llevar una vida plena.
+        <br><br><br><br>
+        <b>Trastorno Bipolar</b>
+        <br><br>
+        El trastorno bipolar es una enfermedad mental que causa cambios extremos en el estado de ánimo, el pensamiento y el comportamiento de una persona. Estos cambios van desde períodos de euforia o manía, donde la persona puede sentirse extremadamente feliz y enérgica, hasta períodos de depresión, donde puede experimentar una profunda tristeza y desesperación. Estos cambios de humor pueden ser intensos y afectar significativamente la vida diaria de la persona. El tratamiento suele incluir medicamentos y terapia para ayudar a estabilizar el estado de ánimo y gestionar los síntomas.
+        <br><br><br><br>
+        <b>Transtorno de Estrés Postraumático</b>
+        <br><br>
+        El trastorno de estrés postraumático (TEPT) es un trastorno mental que puede desarrollarse después de experimentar o presenciar un evento traumático, como un accidente grave, abuso, violencia, guerra o desastre natural. Las personas con TEPT pueden experimentar flashbacks, pesadillas, evitación de situaciones que les recuerden el evento traumático, sentimientos de culpa o miedo intenso, y cambios en el estado de ánimo y en la capacidad para funcionar en la vida diaria. El tratamiento generalmente incluye terapia y, en algunos casos, medicamentos, para ayudar a la persona a procesar el trauma y aprender a manejar los síntomas.
+        <br><br><br><br>
+        <b>Transtorno Obsesivo-Compulsivo</b>
+        <br><br><br><br>
+        (TOC) es un trastorno de salud mental que se caracteriza por pensamientos intrusivos y recurrentes, llamados obsesiones, que causan ansiedad significativa, y comportamientos repetitivos, llamados compulsiones, que la persona realiza en un intento de aliviar esa ansiedad. Las obsesiones pueden incluir miedo a la contaminación, dudas constantes, pensamientos violentos o sexuales no deseados, entre otros. Las compulsiones son acciones repetitivas, como lavado de manos excesivo, ordenar o contar cosas, que la persona realiza para reducir la ansiedad asociada con las obsesiones. El tratamiento suele incluir terapia cognitivo-conductual y, en algunos casos, medicamentos, para ayudar a la persona a manejar sus síntomas.
+        <br><br><br><br>
+        <b>Transtorno por déficit de atención e hiperactividad (TDAH)</b>
+        <br><br>
+        es un trastorno neurobiológico que se caracteriza por dificultades en el control de la atención, la impulsividad y la hiperactividad. Las personas con TDAH pueden tener dificultades para prestar atención, mantener el enfoque en una tarea, controlar sus impulsos y regular su nivel de actividad. Esto puede afectar su rendimiento académico, su trabajo y sus relaciones interpersonales. El tratamiento suele incluir terapia conductual, educación sobre el trastorno y, en algunos casos, medicamentos para ayudar a controlar los síntomas.
+        <br><br><br><br>
+        <br><br><br><br>Alguna referencia:<br>
+        <a href="https://www.cdc.gov/childrensmentalhealth/spanish/conditions.html">Pinche aquí</a>
+
+
+
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+</div>
+<ion-button  class="botONE" [routerLink]="['/analisis']">Volver atrás</ion-button>
+</ion-content>
+

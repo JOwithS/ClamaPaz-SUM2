@@ -1,0 +1,7 @@
+{
+  "name": "ssskeletonApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,7 @@
+{
+    "appId": "com.clamapaz.app",
+    "appName": "ClamaPaz-2",
+    "webDir": "www",
+    "bundledWebRuntime": false
+  }
+  

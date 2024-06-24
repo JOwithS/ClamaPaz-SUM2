@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>ayuda</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngIf="mostrarMensajeay">
+    <ion-item style="padding-top: 20px;">
+      <ion-card>
+        <ion-card-header>
+        </ion-card-header>
+        <ion-card-content>
+          <strong><h2>Busca Ayuda Profesional:</h2><br><br></strong>
+          Consulta a un Médico: Habla con tu médico de cabecera sobre tus síntomas. Ellos pueden derivarte a un especialista en salud mental, como un psiquiatra o psicólogo.
+          <br><br>
+          Terapeuta o Consejero: Considera ver a un terapeuta o consejero. Ellos pueden ayudarte a comprender tus síntomas y desarrollar estrategias para manejarlos.
+          <br><br><br><br>
+          <strong><h2>Infórmate:</h2><br><br></strong>
+          <br><br>
+          Educación: Aprende sobre tu trastorno. Comprender lo que estás experimentando puede ser muy útil. Hay muchos recursos en línea, libros y grupos de apoyo que pueden ofrecer información valiosa.
+          <br><br><br><br>
+          <strong><h2>Apoyo Social:</h2><br><br></strong>
+          Habla con Alguien de Confianza: Compartir tus sentimientos y experiencias con amigos o familiares de confianza puede aliviar el peso emocional.
+          <br><br>
+          Grupos de Apoyo: Únete a un grupo de apoyo, ya sea en persona o en línea. Conectar con otros que estén pasando por situaciones similares puede ser reconfortante y motivador.
+          <br><br><br><br>
+          <strong><h2> Cuida tu Cuerpo:</h2><br><br></strong>
+          Ejercicio: La actividad física regular puede ayudar a mejorar tu estado de ánimo y reducir la ansiedad.
+          <br><br>
+          Nutrición: Come una dieta equilibrada. Algunos estudios sugieren que ciertos alimentos pueden influir en tu estado de ánimo.
+          <br><br>
+          Sueño: Asegúrate de dormir lo suficiente. El sueño es crucial para la salud mental.
+          <br><br><br><br>
+          <strong><h2>Evita el Aislamiento:</h2><br><br></strong>
+          <br><br>
+          Conéctate con Otros: Mantén tus relaciones sociales activas. Participar en actividades comunitarias o hobbies puede ser beneficioso.
+          <br><br><br><br>
+          <strong><h2>Planifica para Crisis:</h2><br><br></strong>
+          <br><br>
+          Plan de Acción: Ten un plan en caso de una crisis de salud mental. Esto podría incluir números de emergencia, personas a las que llamar y técnicas de autocuidado que te ayuden en momentos difíciles.
+          <br><br><br><br>
+          <strong><h2>Terapia y Medicación:</h2><br><br></strong>
+          <br><br>
+          Tratamiento Continuado: Sigue las recomendaciones de tu profesional de salud mental. Esto puede incluir terapia regular y, si es necesario, medicación.
+          <br><br><br><br>
+          Fuentes a las que puedes consultar:
+          <br><br>
+          <a href="https://www.terapify.com/blog/como-cuidar-la-salud-mental/">UNICEF: CÓMO CUIDAR TU SALUD MENTAL</a>
+          <br><br>
+          <a href="https://www.unicef.org/mexico/c%C3%B3mo-cuidar-tu-salud-mental">Terapify: Consejos para cuidar tu salud mental</a> 
+          
+
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </div>
+  <ion-button  class="botONE" [routerLink]="['/analisis']">Volver atrás</ion-button>
+</ion-content>

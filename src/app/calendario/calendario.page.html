@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>calendario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<form [formGroup]="dateForm">
+  <mat-form-field>
+    <mat-label>Elige una fecha</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="selectedDate">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <br>
+
+</form>
+<ion-button expand="block" (click)="saveDate()" color="primary">Guardar Fecha</ion-button>
+<ion-button expand="block" (click)="loadLastSavedDate()" color="secondary">Mostrar Fecha Guardada</ion-button>
+<ion-button expand="block" (click)="deleteDate()" color="danger">Eliminar Fecha Guardada</ion-button>
+<ion-button class="botONE" [routerLink]="['/analisis']">Volver atrás</ion-button>
+
+
+<div *ngIf="mostrarMensajefecha">
+  <ion-item style="padding-top: 20px;">
+    <ion-card>
+      <ion-card-header>
+        Escoge una fecha para tu cita
+      </ion-card-header>
+      <ion-card-content>
+        Dentro de los tips en "Ayuda" te sugerí que organices tu tiempo.
+        <br><br>
+        Define una fecha para una ocación, es un paso más para lograr organizarte.
+        <br>
+        No podrás escribirnos el motivo de la fecha, ya que es algo personal, tuyo.
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+</div>
