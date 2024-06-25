@@ -293,10 +293,35 @@
   <p>Organiza tu día</p>
   <br>
   <b>Arreglate una cita</b>
-  <br><br><br><br>
+  <br><br><br><br><br><br><br><br>
 </div>
 <ion-img src="assets/img/organizate.png" alt="Descripción de la imagen" [routerLink]="['/calendario']"class="animation"/>
+<br><br><br><br>
+
+<div class="ojo">
+  <p>Tomate una foto</p>
+  <br>
+  <b>Haz click en el botón para capturar una imagen</b>
+  <br><br><br><br>
+</div>
+
+<ion-button expand="block" (click)="tomarFoto()">Tomar Foto</ion-button>
+
+<!-- Mostrar la foto capturada si está disponible -->
+<ion-card *ngIf="foto">
+  <ion-card-header>
+    Foto Capturada
+  </ion-card-header>
+  <ion-card-content>
+    <ion-img [src]="foto" alt="Foto Capturada"></ion-img>
+  </ion-card-content>
+</ion-card>
+
 <br><br><br><br><br><br><br><br>
+
+<div #mapContainer id="mapContainer"></div>
+<b>conoce tu ubicación</b>
+
 <div class="example-button-row">
   <ion-button (click)="logout()">Logout</ion-button>
 </div>

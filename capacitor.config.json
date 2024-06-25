@@ -1,7 +1,14 @@
 {
-    "appId": "com.clamapaz.app",
-    "appName": "ClamaPaz-2",
-    "webDir": "www",
-    "bundledWebRuntime": false
+  "appId": "com.clamapaz.app",
+  "appName": "ClamaPaz-2",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "plugins": {
+    "Camera": {
+      "android": {
+        "saveToGallery": true,
+        "correctOrientation": true
+      }
+    }
   }
-  
+}

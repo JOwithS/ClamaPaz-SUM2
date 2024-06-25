@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageService } from '../services/storage.service';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -10,10 +11,13 @@ import { Router } from '@angular/router';
 export class HomePage implements OnInit {
   nombre: string = "";
   username?: string;
+  financialData: any[] = [];
 
-  constructor(private storageService: StorageService, private router: Router) {}
+
+  constructor(private storageService: StorageService, private router: Router, private http: HttpClient) {}
 
   async ngOnInit() {
+    this.fetchFinancialData();
     try {
       const isActiveSession = await this.storageService.isAuthenticated();
       if (!isActiveSession) {
@@ -43,11 +47,22 @@ export class HomePage implements OnInit {
   async logout() {
     try {
       if (this.username) {
-        await this.storageService.logout(); // Llamada al método logout del servicio
+        await this.storageService.logout(); 
       }
       this.router.navigate(['/login'], { replaceUrl: true });
     } catch (error) {
       console.error('Error al cerrar sesión:', error);
     }
   }
+  fetchFinancialData()
+  {
+    this.http.get('https://mindicador.cl/api').subscribe((response: any) =>{
+
+      console.log(response)
+
+    });
+  }
+
+
+  
 }

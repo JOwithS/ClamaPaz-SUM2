@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
+import { ToastController } from '@ionic/angular';
+
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +10,7 @@ export class StorageService {
   private _storage: Storage | null = null;
   private authToken: string | null = null; 
   
-  constructor(private storage: Storage) {
+  constructor(private storage: Storage, private toastController: ToastController) {
     this.initStorage();
   }
 
@@ -39,7 +41,7 @@ export class StorageService {
   // Método para cerrar sesión y limpiar el token
   async logout() {
     await this._storage?.remove('auth_token');
-    this.authToken = null;  // Limpiar la variable local
+    this.authToken = null; 
   }
 
   // Si el token está almacenado en la variable local, el usuario está autenticado
@@ -59,7 +61,7 @@ export class StorageService {
 
   // Función para guardar la fecha seleccionada en Ionic Storage
   async saveSelectedDate(selectedDate: Date) {
-    const formattedDate = selectedDate.toISOString(); // ISO format
+    const formattedDate = selectedDate.toISOString(); 
     await this._storage?.set('selectedDate', formattedDate);
   }
 
@@ -98,4 +100,16 @@ export class StorageService {
     const storedPassword = await this._storage?.get('password');
     return storedUsername === username && storedPassword === password;
   }
+
+
+  private async presentToast(message: string){
+    const toast = await this.toastController.create({
+      message : message,
+      duration: 2000
+    
+
+    });
+    toast.present();
+  }
 }
+

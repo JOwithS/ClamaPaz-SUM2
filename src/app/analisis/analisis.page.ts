@@ -2,6 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { StorageService } from '../services/storage.service';
 import { Router } from '@angular/router';
+import { Camera, CameraResultType } from '@capacitor/camera';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { ViewChild, ElementRef } from '@angular/core';
+import { Plugins } from '@capacitor/core';
+import { MapType } from '@angular/compiler';
+
+
+declare var google: any;
 
 @Component({
   selector: 'app-analisis',
@@ -9,6 +17,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./analisis.page.scss'],
 })
 export class AnalisisPage implements OnInit {
+  @ViewChild('mapContainers', { static: false}) mapContainer: ElementRef | undefined;
+  map: any;
+  foto: SafeResourceUrl | undefined;
   nombre: string = '';
   mostrarContenido: boolean = false;
   mostrarFormularioContenido: boolean = false;
@@ -28,10 +39,11 @@ export class AnalisisPage implements OnInit {
   
 
 
-  constructor(private route: ActivatedRoute, private storageService: StorageService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private storageService: StorageService, private router: Router, private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
     this.nombre = this.route.snapshot.paramMap.get('nombre') || '';
+    this.loadMap();
 
     setTimeout(() => {
       this.mostrarContenido = true;
@@ -97,6 +109,50 @@ export class AnalisisPage implements OnInit {
   irAUrl(url: string) {
     window.location.href = url;
   }
+
+
+  async loadMap(){
+    try{
+      const{ Geolocation } = Plugins;
+      const coordinates = await Geolocation['getCurrentPosition']();
+
+      const mapOptions = {
+        center: new google.maps.LatLng(coordinates.coords.latitude, coordinates.coords.longitud),
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+
+      this.map = new google.maps.Map(this.mapContainer?.nativeElement, mapOptions);
+
+      //marcador
+      const marker = new google.maps.Marker({
+        position: mapOptions.center,
+        map: this.map,
+        title:  'Ubicacion actual'
+      });
+
+    }catch (error) {
+      console.error('Error al cargar el mapa ', error);
+    }
+
+  }
+
+  async tomarFoto() {
+    try {
+      const fotoCapturada = await Camera.getPhoto({
+        quality: 90,
+        allowEditing: true,
+        resultType: CameraResultType.Uri
+      });
+
+      
+      this.foto = this.sanitizer.bypassSecurityTrustResourceUrl(fotoCapturada.webPath!);
+    } catch (error) {
+      console.error('Error al tomar la foto', error);
+    }
+  }
+
+
 
   async logout() {
     await this.storageService.logout();
