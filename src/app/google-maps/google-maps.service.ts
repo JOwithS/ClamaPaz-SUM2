@@ -8,7 +8,7 @@ declare var google: any;
 })
 export class GoogleMapsService {
 
-  apiKey = 'AIzaSyCynjBqzgD2Q9Wlzj66ZcgYcOBp9IqlAv4'; 
+  apiKey = ''; 
   mapsLoaded = false;
 
   constructor(@Inject(DOCUMENT) private document: Document) { }
