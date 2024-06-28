@@ -1,14 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import * as L from 'leaflet';
 import { ActivatedRoute } from '@angular/router';
 import { StorageService } from '../services/storage.service';
 import { Router } from '@angular/router';
 import { Camera, CameraResultType } from '@capacitor/camera';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ViewChild, ElementRef } from '@angular/core';
-import { Plugins } from '@capacitor/core';
 import { MapType } from '@angular/compiler';
+import { Plugins }  from '@capacitor/core';
 
 
+const {Geolocation} = Plugins;
+declare var google: any;
 declare var google: any;
 
 @Component({
@@ -17,8 +20,9 @@ declare var google: any;
   styleUrls: ['./analisis.page.scss'],
 })
 export class AnalisisPage implements OnInit {
+  private map: L.Map = {} as L.Map;
   @ViewChild('mapContainers', { static: false}) mapContainer: ElementRef | undefined;
-  map: any;
+  
   foto: SafeResourceUrl | undefined;
   nombre: string = '';
   mostrarContenido: boolean = false;
@@ -41,9 +45,9 @@ export class AnalisisPage implements OnInit {
 
   constructor(private route: ActivatedRoute, private storageService: StorageService, private router: Router, private sanitizer: DomSanitizer) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.nombre = this.route.snapshot.paramMap.get('nombre') || '';
-    this.loadMap();
+
 
     setTimeout(() => {
       this.mostrarContenido = true;
@@ -110,14 +114,14 @@ export class AnalisisPage implements OnInit {
     window.location.href = url;
   }
 
-
+/*
   async loadMap(){
     try{
       const{ Geolocation } = Plugins;
       const coordinates = await Geolocation['getCurrentPosition']();
 
       const mapOptions = {
-        center: new google.maps.LatLng(coordinates.coords.latitude, coordinates.coords.longitud),
+        center: new google.maps.LatLng(coordinates.coords.latitude, coordinates.coords.longitude),
         zoom: 15,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       };
@@ -136,7 +140,7 @@ export class AnalisisPage implements OnInit {
     }
 
   }
-
+*/
   async tomarFoto() {
     try {
       const fotoCapturada = await Camera.getPhoto({
@@ -153,10 +157,21 @@ export class AnalisisPage implements OnInit {
   }
 
 
+  
+
 
   async logout() {
     await this.storageService.logout();
     this.router.navigate(['/login'],  { replaceUrl: true }); 
     console.log('Usuario deslogueado');
   }
+
+
+
+
 }
+
+
+
+
+

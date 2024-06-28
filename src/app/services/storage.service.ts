@@ -102,6 +102,24 @@ export class StorageService {
   }
 
 
+
+
+  // Método para guardar la ubicación seleccionada
+  async saveSelectedLocation(location: string) {
+    await this._storage?.set('selectedLocation', location);
+  }
+
+  // Método para obtener la ubicación seleccionada
+  async getSelectedLocation(): Promise<string | null> {
+    return await this._storage?.get('selectedLocation');
+  }
+
+  // Método para eliminar la ubicación seleccionada
+  async deleteSelectedLocation() {
+    await this._storage?.remove('selectedLocation');
+  }
+
+  
   private async presentToast(message: string){
     const toast = await this.toastController.create({
       message : message,

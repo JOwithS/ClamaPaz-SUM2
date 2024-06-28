@@ -4,6 +4,11 @@ import { authGuard } from './auth.guard';
 
 const routes: Routes = [
   {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule),
+    canActivate: [authGuard]
+  },
+  {
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'
@@ -58,7 +63,16 @@ const routes: Routes = [
   {
     path: '**',
     redirectTo: 'page-not-found'
-  }
+  },
+  {
+    path: 'persona',
+    loadChildren: () => import('./persona/persona.module').then( m => m.PersonaPageModule)
+  },
+  {
+    path: 'datos-persona',
+    loadChildren: () => import('./datos-persona/datos-persona.module').then( m => m.DatosPersonaPageModule)
+  },
+
 ];
 
 @NgModule({

@@ -1,6 +1,8 @@
+
+
 {
   "appId": "com.clamapaz.app",
-  "appName": "ClamaPaz-2",
+  "appName": "ClamaPaz-SUM2",
   "webDir": "www",
   "bundledWebRuntime": false,
   "plugins": {

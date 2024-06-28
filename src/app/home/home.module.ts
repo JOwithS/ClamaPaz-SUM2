@@ -18,6 +18,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { HomePage } from './home.page';
 import { NativeDateAdapter } from '@angular/material/core';
 import { Injectable } from '@angular/core';
+import { GoogleMapsComponent } from '../google-maps/google-maps.component';
 
 //definición o si
 export const MY_DATE_FORMATS = {
@@ -73,7 +74,7 @@ export class CustomDateAdapter extends NativeDateAdapter {
     MatSelectModule,
     MatToolbarModule
   ],
-  declarations: [HomePage],
+  declarations: [HomePage, GoogleMapsComponent ],
   providers: [
     { provide: DateAdapter, useClass: CustomDateAdapter },
     { provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS },
