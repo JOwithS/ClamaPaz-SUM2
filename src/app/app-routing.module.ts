@@ -18,11 +18,6 @@ const routes: Routes = [
     loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
   },
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule),
-    canActivate: [authGuard]
-  },
-  {
     path: 'analisis',
     loadChildren: () => import('./analisis/analisis.module').then(m => m.AnalisisPageModule),
     canActivate: [authGuard]
@@ -71,8 +66,7 @@ const routes: Routes = [
   {
     path: 'datos-persona',
     loadChildren: () => import('./datos-persona/datos-persona.module').then( m => m.DatosPersonaPageModule)
-  },
-
+  }
 ];
 
 @NgModule({

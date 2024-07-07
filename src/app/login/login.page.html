@@ -24,16 +24,16 @@
     </ion-item>
       <br><br><br>
       <form (ngSubmit)="submitForm()">
-        <label for="username">Username:</label>
+        <label for="username">Nombre de Usuario:</label>
         <ion-input type="text" id="username" class="centrolab"[(ngModel)]="username" name="username" required></ion-input>
         <br>
-        <label for="password">Password:</label>
+        <label for="password">Contraseña:</label>
         <ion-input type="password" id="password" class="centrolab" [(ngModel)]="password" name="password" required></ion-input>
         <br>
         <section>
           <div class="example-button-row">
-            <ion-button (click)="login()">Login</ion-button>
-          <ion-button (click)="register()">Register</ion-button>
+            <ion-button (click)="login()">Inicia Sesión</ion-button>
+          <ion-button (click)="register()">Registrate</ion-button>
           </div>
           
         </section>
